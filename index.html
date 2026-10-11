@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BookNest — discover books and share thoughtful reviews.">
+  <title>BookNest | Book Review System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-icon">B</span> BookNest</a>
+    <nav><a href="#discover">Discover</a><a href="#reviews">Reviews</a><a href="#add-review">Write a review</a></nav>
+    <button class="outline-btn" id="resetDemo" type="button">Reset demo</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+        <h1>Find a book<br><em>worth remembering.</em></h1>
+        <p class="hero-text">Explore reader favorites, discover your next great read, and share the stories that stay with you.</p>
+        <a class="primary-btn" href="#discover">Explore the collection <span>↗</span></a>
+        <div class="hero-stats"><div><strong id="bookCount">6</strong><span>Featured books</span></div><div><strong id="reviewCount">3</strong><span>Reader reviews</span></div><div><strong>5★</strong><span>Rate your reads</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Decorative book illustration">
+        <div class="sun"></div><div class="book-stack"><div class="book book-one"><span>THE ART OF<br>READING</span><small>Every page, a new world</small></div><div class="book book-two"><span>QUIET<br>WONDERS</span></div><div class="book book-three"><span>GROW<br>THROUGH IT</span></div></div>
+        <div class="floating-note">✦ &nbsp; Turn curiosity into a habit</div>
+      </div>
+    </section>
+
+    <section class="section" id="discover">
+      <div class="section-heading"><div><p class="eyebrow">THE BOOKSHELF</p><h2>Stories to get lost in</h2></div><span class="muted">Curated for curious minds</span></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search title or author..." aria-label="Search books"></label>
+        <select id="sortSelect" aria-label="Sort books"><option value="featured">Featured order</option><option value="title">Title A–Z</option><option value="rating">Highest rated</option></select>
+      </div>
+      <div class="book-grid" id="bookGrid"></div>
+    </section>
+
+    <section class="quote-band"><span class="quote-mark">“</span><p>A reader lives a thousand lives before he dies. The man who never reads lives only one.</p><span class="quote-credit">— A reminder to keep turning pages</span></section>
+
+    <section class="section review-section" id="reviews">
+      <div class="section-heading"><div><p class="eyebrow">COMMUNITY NOTES</p><h2>What readers are saying</h2></div><span class="muted">Real thoughts, one page at a time</span></div>
+      <div id="reviewList" class="review-grid"></div>
+    </section>
+
+    <section class="section form-section" id="add-review">
+      <div class="form-intro"><p class="eyebrow">YOUR TURN</p><h2>Pass the story on.</h2><p>Finished a good book? Leave a rating and help another reader find their next favorite.</p><div class="form-decoration">✳</div></div>
+      <form id="reviewForm" class="review-form">
+        <label>Your name<input id="reviewerName" required maxlength="60" placeholder="e.g. Alex Morgan"></label>
+        <label>Choose a book<select id="reviewBook" required></select></label>
+        <label>Your rating<select id="reviewRating" required><option value="5">★★★★★ — Loved it</option><option value="4">★★★★☆ — Really good</option><option value="3">★★★☆☆ — It was good</option><option value="2">★★☆☆☆ — Not for me</option><option value="1">★☆☆☆☆ — Disappointed</option></select></label>
+        <label>Your review<textarea id="reviewComment" required maxlength="500" rows="4" placeholder="What made this book memorable?"></textarea></label>
+        <button class="primary-btn" type="submit">Publish review <span>↗</span></button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-icon">B</span> BookNest</a><span>A student project built with HTML, CSS & JavaScript.</span><a href="#top">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
